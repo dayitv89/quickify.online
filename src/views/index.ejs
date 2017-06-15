@@ -6,7 +6,10 @@
   </head>
   <body>
     <span class='logo'>
-      <img src="/images/bee.png" width='50' heigth='50' /><span class='logo0'>Ǫ̈uickify.</span><span class='logo1'>ṏnline</span>
+      <% if (qr_value != 'logo.png') { %>
+        <img src="/images/bee.png" width='100' heigth='100' />
+      <% } %>
+      <span class='logo0'>Ǫ̈uickify.</span><span class='logo1'>ṏnline</span>
     </span><br/>
     <img src="/images/<%= qr_value %>" width='200' heigth='200' />
   </body>
