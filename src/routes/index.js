@@ -6,20 +6,24 @@ var QRCode = require('qrcode');
 var Promise = require('promise');
 var crypto = require('crypto');
 
-/* Generate QRs+helper */
+/**
+ 	* Generate QRs+helper
+	* We can use https://github.com/kaarposoft/qrlogo for creating images.
+*/
+
 const hash = function(t) {
 	return crypto.createHash('md5').update(t + 'salt1231267318236182gsdfssdf').digest('hex');
 };
 
 const createQR = function(qr) {
 	const options = {
-		margin: 1,
+		margin: 2,
 		scale: 10,
 		errorCorrectionLevel: 'H',
 		type: 'image/png',
 		color: {
-			dark: '#3b5998', // Blue dots
-			light: '#fff9' // Transparent background
+			dark: '#42B3C6', // Blue dots
+			light: '#F9F9F9' // Transparent background
 		}
 	};
 
@@ -38,7 +42,7 @@ const createQR = function(qr) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Deep link testing', qr_value: '' });
+	res.render('index', { title: 'Quickify.online', qr_value: 'logo.png' });
 });
 
 router.get('/:text', function(req, res, next) {
@@ -46,8 +50,8 @@ router.get('/:text', function(req, res, next) {
 	createQR(link)
 		.then(filename => {
 			res.render('index', {
-				title: 'quickify.online',
-				qr_value: filename
+				title: 'Quickify.online',
+				qr_value: 'qr/' + filename
 			});
 		})
 		.catch(err => {
