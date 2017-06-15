@@ -22,8 +22,8 @@ const createQR = function(qr) {
 		errorCorrectionLevel: 'H',
 		type: 'image/png',
 		color: {
-			dark: '#42B3C6', // Blue dots
-			light: '#F9F9F9' // Transparent background
+			dark: '#42B3C6', // dots color
+			light: '#F9F9F9' // background color
 		}
 	};
 

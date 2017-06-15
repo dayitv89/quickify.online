@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.logo {
+  font-family: Roboto;
+  font-size: 26px;
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
+.logo0 {
+  color: #015f76;
+}
+
+.logo1 {
+  color: #977aff;
+}
